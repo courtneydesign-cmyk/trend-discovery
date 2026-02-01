@@ -3,12 +3,14 @@ name: Daily Trend Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *" # daily at 8am UTC
+    - cron: "0 8 * * *" # daily at 8am AEST
+
+permissions:
+  contents: write
 
 jobs:
   run-trend-bot:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -19,15 +21,13 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run trend bot
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-        run: |
-          python trend_bot.py
+        run: python trend_bot.py
 
       - name: Commit updated data.json
         run: |
