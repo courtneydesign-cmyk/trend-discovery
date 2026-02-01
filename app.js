@@ -1,4 +1,3 @@
-// IMPORTANT: Replace these with your actual Supabase credentials
 const SUPABASE_URL = 'https://uyhdaziqmmfhestfyyhn.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk';
 
