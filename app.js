@@ -5,7 +5,7 @@ const SUPABASE_KEY = 'sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk';
 // Supabase client setup
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-async function loadFeed() {
+export async function loadFeed() {
     try {
         const response = await fetch('data.json');
         const items = await response.json();
@@ -28,7 +28,7 @@ async function loadFeed() {
     }
 }
 
-async function loadSaved() {
+export async function loadSaved() {
     try {
         const { data: votes } = await supabase
             .from('votes')
@@ -60,7 +60,7 @@ async function loadSaved() {
     }
 }
 
-async function loadWeekly() {
+export async function loadWeekly() {
     try {
         const response = await fetch('weekly.json');
         const data = await response.json();
