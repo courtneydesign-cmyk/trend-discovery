@@ -46,8 +46,8 @@ def extract_tags(text):
     return list(set(matched))
 
 def passes_quality_filter(text, tags):
-    """Enforce strict quality rule: 2+ tags OR 1 tag + quality signal."""
-    if len(tags) >= 2:
+    """Looser filter for RSS: 1+ cluster tag is enough."""
+    return len(tags) >= 1
         return True
     
     if len(tags) == 1:
@@ -237,8 +237,7 @@ def main():
         
         feed_items.sort(key=lambda x: x['personalized_score'], reverse=True)
         
-        os.makedirs('site', exist_ok=True)
-        with open('site/data.json', 'w') as f:
+        with open('data.json', 'w') as f:
             json.dump(feed_items[:100], f, default=str)
         
         print("Daily feed updated successfully")
