@@ -1,13 +1,10 @@
-const SUPABASE_URL = 'https://uyhdaziqmmfhestfyyhn.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk';
-
-// Supabase client setup
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const SUPABASE_URL = "https://uyhdaziqmmfhestfyyhn.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV5aGRhemlxbW1maGVzdGZ5eWhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MDgxOTgsImV4cCI6MjA4NTQ4NDE5OH0.3ahu2CH2xN6rIXmHp_u57Oi_38_tB3oGxlKYXvClv_o"; // should start with eyJ...
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 export async function loadFeed() {
     try {
         const response = await fetch('data.json');
@@ -209,3 +206,7 @@ function toggleExplanation(btn) {
     const explanation = btn.nextElementSibling;
     explanation.classList.toggle('visible');
 }
+
+window.voteKeep = voteKeep;
+window.voteSkip = voteSkip;
+window.toggleExplanation = toggleExplanation;
