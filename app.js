@@ -2,8 +2,12 @@ const SUPABASE_URL = 'https://uyhdaziqmmfhestfyyhn.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk';
 
 // Supabase client setup
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
+const SUPABASE_URL = "https://uyhdaziqmmfhestfyyhn.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_PpLi4l7kaybHrOsm1WVsCw_blfGkrEk";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 export async function loadFeed() {
     try {
         const response = await fetch('data.json');
