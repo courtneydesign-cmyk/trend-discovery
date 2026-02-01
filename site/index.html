@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Feed</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active">Feed</a>
+        <a href="saved.html">Saved</a>
+        <a href="week.html">Weekly Intel</a>
+    </nav>
+
+    <div class="container">
+        <h1>Daily Feed</h1>
+        <div id="feed-grid" class="grid"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        loadFeed();
+    </script>
+</body>
+</html>

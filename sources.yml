@@ -1,0 +1,21 @@
+# RSS feeds for menswear, activewear, graphic design trends
+# Add only feeds you have permission to use
+
+feeds:
+  - url: "https://hypebeast.com/feed"
+    name: "Hypebeast"
+    
+  - url: "https://www.highsnobiety.com/feed/"
+    name: "Highsnobiety"
+    
+  - url: "https://www.complex.com/style/rss"
+    name: "Complex Style"
+    
+  - url: "https://www.gq.com/feed/rss"
+    name: "GQ"
+    
+  - url: "https://www.esquire.com/rss/style.xml/"
+    name: "Esquire Style"
+
+# Add more RSS feeds as needed
+# Focus on: streetwear, menswear, graphic design, activewear
