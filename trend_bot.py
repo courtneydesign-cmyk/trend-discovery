@@ -48,7 +48,6 @@ def extract_tags(text):
 def passes_quality_filter(text, tags):
     """Looser filter for RSS: 1+ cluster tag is enough."""
     return len(tags) >= 1
-        return True
     
     if len(tags) == 1:
         text_lower = text.lower()
